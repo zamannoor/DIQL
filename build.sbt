@@ -4,6 +4,8 @@ scalaVersion := "2.11.7"
 licenses += "Apache-2.0" -> url("http://opensource.org/licenses/Apache-2.0")
 credentials += Credentials(Path.userHome / ".ivy2" / ".sbtcredentials")
 sourceDirectory in Compile := baseDirectory.value / "src" / "main"
+unmanagedSourceDirectories in Compile += baseDirectory.value / "src" / "diablo"
+unmanagedSourceDirectories in Compile += baseDirectory.value / "src" / "sqlgen"
 libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.6"
 
 lazy val `diql-spark` = (project in file("."))
